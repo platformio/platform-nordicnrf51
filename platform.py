@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from platformio.managers.platform import BasePlatform
+from platformio.managers.platform import PlatformBase
 
 
-class Nordicnrf51Platform(BasePlatform):
+class Nordicnrf51Platform(PlatformBase):
 
     def is_embedded(self):
         return True
@@ -25,5 +25,5 @@ class Nordicnrf51Platform(BasePlatform):
                 "tool-rfdloader" in self.packages):
             del self.packages['tool-rfdloader']
 
-        return BasePlatform.configure_default_packages(
+        return PlatformBase.configure_default_packages(
             self, variables, targets)
