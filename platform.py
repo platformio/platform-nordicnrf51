@@ -22,8 +22,8 @@ class Nordicnrf51Platform(BasePlatform):
 
     def configure_default_packages(self, variables, targets):
         if (variables.get("board") != "rfduino" and
-                "tool-rfdloader" in self.get_packages()):
-            del self.get_packages()['tool-rfdloader']
+                "tool-rfdloader" in self.packages):
+            del self.packages['tool-rfdloader']
 
         return BasePlatform.configure_default_packages(
             self, variables, targets)
