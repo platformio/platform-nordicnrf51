@@ -47,6 +47,9 @@
       "optional": true,
       "version": "~1.121.0"
     },
+    "tool-sreccat": {
+      "version": "~1.164.0"
+    },
     "tool-rfdloader": {
       "type": "uploader",
       "optional": true,

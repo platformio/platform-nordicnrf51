@@ -22,6 +22,7 @@ from SCons.Script import (COMMAND_LINE_TARGETS, AlwaysBuild, Builder, Default,
                           DefaultEnvironment)
 
 env = DefaultEnvironment()
+platform = env.DevPlatform()
 
 env.Replace(
     AR="arm-none-eabi-ar",
@@ -102,6 +103,21 @@ env.Append(
                 "$SOURCES",
                 "$TARGET"]),
             suffix=".hex"
+        ),
+        MergeHex=Builder(
+            action=" ".join([
+                join(platform.get_package_dir("tool-sreccat") or "",
+                     "srec_cat"),
+                "$SOFTDEVICEHEX",
+                "-intel",
+                "$SOURCES",
+                "-intel",
+                "-o",
+                "$TARGET",
+                "-intel",
+                "--line-length=44"
+            ]),
+            suffix=".hex"
         )
     )
 )
@@ -130,7 +146,13 @@ target_elf = env.BuildProgram()
 if "uploadlazy" in COMMAND_LINE_TARGETS:
     target_firm = join("$BUILD_DIR", "firmware.hex")
 else:
-    target_firm = env.ElfToHex(join("$BUILD_DIR", "firmware"), target_elf)
+    if "SOFTDEVICEHEX" in env:
+        target_firm = env.MergeHex(
+            join("$BUILD_DIR", "firmware"),
+            env.ElfToHex(join("$BUILD_DIR", "userfirmware"), target_elf)
+        )
+    else:
+        target_firm = env.ElfToHex(join("$BUILD_DIR", "firmware"), target_elf)
 
 #
 # Target: Print binary size
