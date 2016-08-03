@@ -1,0 +1,17 @@
+{
+  "build": {
+    "cpu": "cortex-m0", 
+    "f_cpu": "32000000L", 
+    "mcu": "nrf51822"
+  }, 
+  "frameworks": [
+    "mbed"
+  ], 
+  "name": "Nordic nRF51-Dongle", 
+  "upload": {
+    "maximum_ram_size": 32768, 
+    "maximum_size": 262144
+  }, 
+  "url": "https://developer.mbed.org/platforms/Nordic-nRF51-Dongle/", 
+  "vendor": "Nordic"
+}
