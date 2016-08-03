@@ -22,7 +22,7 @@ from SCons.Script import (COMMAND_LINE_TARGETS, AlwaysBuild, Builder, Default,
                           DefaultEnvironment)
 
 env = DefaultEnvironment()
-platform = env.DevPlatform()
+platform = env.PioPlatform()
 
 env.Replace(
     AR="arm-none-eabi-ar",
