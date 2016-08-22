@@ -7,6 +7,7 @@ env:
   - PLATFORMIO_PROJECT_DIR=examples/arduino-internal-libs
   - PLATFORMIO_PROJECT_DIR=examples/mbed-blink
   - PLATFORMIO_PROJECT_DIR=examples/mbed-serial
+  - PLATFORMIO_PROJECT_DIR=examples/mbed-microbit-hello-world
 
 install:
   - pip install -U https://github.com/platformio/platformio/archive/develop.zip
