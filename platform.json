@@ -45,7 +45,7 @@
     "framework-mbed": {
       "type": "framework",
       "optional": true,
-      "version": "~1.121.0"
+      "version": "~2.123.0"
     },
     "tool-sreccat": {
       "version": "~1.164.0"
