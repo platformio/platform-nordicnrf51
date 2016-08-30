@@ -85,27 +85,29 @@ env.Append(
 
     BUILDERS=dict(
         ElfToBin=Builder(
-            action=" ".join([
+            action=env.VerboseAction(" ".join([
                 "$OBJCOPY",
                 "-O",
                 "binary",
                 "$SOURCES",
-                "$TARGET"]),
+                "$TARGET"
+            ]), "Building $TARGET"),
             suffix=".bin"
         ),
         ElfToHex=Builder(
-            action=" ".join([
+            action=env.VerboseAction(" ".join([
                 "$OBJCOPY",
                 "-O",
                 "ihex",
                 "-R",
                 ".eeprom",
                 "$SOURCES",
-                "$TARGET"]),
+                "$TARGET"
+            ]), "Building $TARGET"),
             suffix=".hex"
         ),
         MergeHex=Builder(
-            action=" ".join([
+            action=env.VerboseAction(" ".join([
                 join(platform.get_package_dir("tool-sreccat") or "",
                      "srec_cat"),
                 "$SOFTDEVICEHEX",
@@ -116,7 +118,7 @@ env.Append(
                 "$TARGET",
                 "-intel",
                 "--line-length=44"
-            ]),
+            ]), "Building $TARGET"),
             suffix=".hex"
         )
     )
@@ -158,7 +160,9 @@ else:
 # Target: Print binary size
 #
 
-target_size = env.Alias("size", target_elf, "$SIZEPRINTCMD")
+target_size = env.Alias(
+    "size", target_elf,
+    env.VerboseAction("$SIZEPRINTCMD", "Calculating size $SOURCE"))
 AlwaysBuild(target_size)
 
 #
@@ -167,19 +171,19 @@ AlwaysBuild(target_size)
 
 if env.subst("$BOARD") == "rfduino":
     upload = env.Alias(["upload", "uploadlazy"], target_firm,
-                       [env.AutodetectUploadPort, "$UPLOADCMD"])
+                       [env.VerboseAction(env.AutodetectUploadPort,
+                                          "Looking for upload port..."),
+                        env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")])
 else:
-    upload = env.Alias(["upload", "uploadlazy"], target_firm, env.UploadToDisk)
+    upload = env.Alias(
+        ["upload", "uploadlazy"], target_firm,
+        [env.VerboseAction(env.AutodetectUploadPort,
+                           "Looking for upload disk..."),
+         env.VerboseAction(env.UploadToDisk, "Uploading $SOURCE")])
 AlwaysBuild(upload)
 
 #
-# Target: Unit Testing
-#
-
-AlwaysBuild(env.Alias("test", [target_firm, target_size]))
-
-#
-# Target: Define targets
+# Default targets
 #
 
 Default([target_firm, target_size])

@@ -4,19 +4,16 @@
   "description": "The Nordic nRF51 Series is a family of highly flexible, multi-protocol, system-on-chip (SoC) devices for ultra-low power wireless applications. nRF51 Series devices support a range of protocol stacks including Bluetooth Smart (previously called Bluetooth low energy), ANT and proprietary 2.4GHz protocols such as Gazell.",
   "url": "https://www.nordicsemi.com/eng/Products/nRF51-Series-SoC",
   "homepage": "http://platformio.org/platforms/nordicnrf51",
-  "license": {
-    "type": "Apache-2.0",
-    "url": "http://opensource.org/licenses/apache2.0.php"
-  },
+  "license": "Apache-2.0",
   "engines": {
-    "platformio": "~3.0.0",
+    "platformio": "^3.0.0",
     "scons": ">=2.3.0,<2.6.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/platformio/platform-nordicnrf51.git"
   },
-  "version": "0.1.0",
+  "version": "1.0.0",
   "packageRepositories": [
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "https://sourceforge.net/projects/platformio-storage/files/packages/manifest.json/download",
@@ -45,7 +42,7 @@
     "framework-mbed": {
       "type": "framework",
       "optional": true,
-      "version": "~1.121.0"
+      "version": "~2.123.0"
     },
     "tool-sreccat": {
       "version": "~1.164.0"

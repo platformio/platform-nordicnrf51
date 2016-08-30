@@ -16,5 +16,5 @@ The Nordic nRF51 Series is a family of highly flexible, multi-protocol, system-o
 > platformio platform install nordicnrf51
 
 # install development version
-> platformio platform install https://github.com/platformio/platform-nordicnrf51/archive/develop.zip
+> platformio platform install https://github.com/platformio/platform-nordicnrf51.git
 ```

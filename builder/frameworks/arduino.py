@@ -37,7 +37,7 @@ assert isdir(FRAMEWORK_DIR)
 env.Prepend(
     CPPDEFINES=["ARDUINO=%s" % FRAMEWORK_VERSION.split(".")[1]],
     CPPPATH=[
-        join("$BUILD_DIR", "FrameworkArduino"),
+        join(FRAMEWORK_DIR, "cores", env.BoardConfig().get("build.core")),
         join(FRAMEWORK_DIR, "system", "CMSIS", "CMSIS", "Include"),
         join(FRAMEWORK_DIR, "system", "RFduino"),
         join(FRAMEWORK_DIR, "system", "RFduino", "include")
@@ -76,7 +76,8 @@ libs = []
 if "build.variant" in env.BoardConfig():
     env.Append(
         CPPPATH=[
-            join("$BUILD_DIR", "FrameworkArduinoVariant")
+            join(FRAMEWORK_DIR, "variants",
+                 env.BoardConfig().get("build.variant"))
         ]
     )
     libs.append(env.BuildLibrary(
