@@ -7,11 +7,11 @@
   "frameworks": [
     "mbed"
   ],
-  "name": "Seeed Tiny BLE",
+  "name": "y5 nRF51822 mbug",
   "upload": {
     "maximum_ram_size": 16384,
     "maximum_size": 262144
   },
-  "url": "http://developer.mbed.org/platforms/Seeed-Tiny-BLE/",
-  "vendor": "SeeedStudio"
+  "url": "https://developer.mbed.org/platforms/Y5-NRF51822-MBUG/",
+  "vendor": "y5 design"
 }
