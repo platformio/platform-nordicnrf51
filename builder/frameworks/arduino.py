@@ -57,7 +57,7 @@ env.Prepend(
             "gcc"
         ),
     ],
-    LIBS=["RFduino", "RFduinoBLE", "RFduinoGZLL", "RFduinoSystem"]
+    LIBS=["RFduino", "RFduinoBLE", "RFduinoGZLL", "RFduinoSystem", "c"]
 )
 
 env.Append(
