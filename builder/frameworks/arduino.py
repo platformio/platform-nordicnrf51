@@ -35,7 +35,7 @@ FRAMEWORK_VERSION = platform.get_package_version(
 assert isdir(FRAMEWORK_DIR)
 
 env.Prepend(
-    CPPDEFINES=["ARDUINO=%s" % FRAMEWORK_VERSION.split(".")[1]],
+    CPPDEFINES=[("ARDUINO", int(FRAMEWORK_VERSION.split(".")[1]))],
     CPPPATH=[
         join(FRAMEWORK_DIR, "cores", env.BoardConfig().get("build.core")),
         join(FRAMEWORK_DIR, "system", "CMSIS", "CMSIS", "Include"),
