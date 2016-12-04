@@ -41,7 +41,7 @@
     },
     "framework-mbed-custom": {
       "type": "framework",
-      "version": "~f5cea9c"
+      "version": ">=1.0"
     },
     "tool-sreccat": {
       "version": "~1.164.0"
