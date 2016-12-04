@@ -1,0 +1,17 @@
+{
+  "build": {
+    "cpu": "cortex-m4", 
+    "f_cpu": "64000000L", 
+    "mcu": "nrf52832"
+  }, 
+  "frameworks": [
+    "mbed"
+  ], 
+  "name": "u-blox NINA-B1", 
+  "upload": {
+    "maximum_ram_size": 65536, 
+    "maximum_size": 524288
+  }, 
+  "url": "https://www.u-blox.com/en/product/nina-b1-series", 
+  "vendor": "u-blox"
+}

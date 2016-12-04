@@ -1,9 +1,9 @@
 {
-  "name": "nordicnrf51",
-  "title": "Nordic nRF51",
-  "description": "The Nordic nRF51 Series is a family of highly flexible, multi-protocol, system-on-chip (SoC) devices for ultra-low power wireless applications. nRF51 Series devices support a range of protocol stacks including Bluetooth Smart (previously called Bluetooth low energy), ANT and proprietary 2.4GHz protocols such as Gazell.",
-  "url": "https://www.nordicsemi.com/eng/Products/nRF51-Series-SoC",
-  "homepage": "http://platformio.org/platforms/nordicnrf51",
+  "name": "nordicnrf52",
+  "title": "Nordic nRF52",
+  "description": "The Nordic nRF52 Series is a family of highly flexible, multi-protocol, system-on-chip (SoC) devices for ultra-low power wireless applications. nRF52 Series devices support a range of protocol stacks including Bluetooth Smart (previously called Bluetooth low energy), ANT and proprietary 2.4GHz protocols such as Gazell.",
+  "url": "https://www.nordicsemi.com/eng/Products/nRF52-Series-SoC",
+  "homepage": "http://platformio.org/platforms/nordicnrf52",
   "license": "Apache-2.0",
   "engines": {
     "platformio": "^3.0.0",
@@ -11,19 +11,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/platformio/platform-nordicnrf51.git"
+    "url": "https://github.com/amq/platform-nordicnrf52.git"
   },
   "version": "1.2.0",
   "packageRepositories": [
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "https://sourceforge.net/projects/platformio-storage/files/packages/manifest.json/download",
     "http://dl.platformio.org/packages/manifest.json"
+    {
+      "framework-mbed": [
+        {
+          "type": "git",
+          "url": "https://github.com/amq/mbed-os.git",
+          "system": "*"
+        }
+      ]
+    }
   ],
   "frameworks": {
-    "arduino": {
-      "package": "framework-arduinonordicnrf51",
-      "script": "builder/frameworks/arduino.py"
-    },
     "mbed": {
       "package": "framework-mbed",
       "script": "builder/frameworks/mbed/mbed.py"
@@ -33,11 +38,6 @@
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
       "version": ">=1.40803.0,<1.40805.0"
-    },
-    "framework-arduinonordicnrf51": {
-      "type": "framework",
-      "optional": true,
-      "version": "~1.20302.0"
     },
     "framework-mbed": {
       "type": "framework",
