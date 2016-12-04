@@ -21,8 +21,7 @@
     {
       "framework-mbed-custom": [
         {
-          "type": "git",
-          "url": "https://github.com/amq/mbed-os.git",
+          "url": "https://www.dropbox.com/s/tdk6vefi1cvpv6k/mbed-os.zip?dl=0",
           "version": "5.2.0",
           "system": "*"
         }
