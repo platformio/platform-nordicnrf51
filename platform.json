@@ -19,7 +19,7 @@
     "https://sourceforge.net/projects/platformio-storage/files/packages/manifest.json/download",
     "http://dl.platformio.org/packages/manifest.json",
     {
-      "framework-mbed": [
+      "framework-mbed-custom": [
         {
           "type": "git",
           "url": "https://github.com/amq/mbed-os.git",
@@ -29,8 +29,8 @@
     }
   ],
   "frameworks": {
-    "mbed": {
-      "package": "framework-mbed",
+    "mbed-custom": {
+      "package": "framework-mbed-custom",
       "script": "builder/frameworks/mbed/mbed.py"
     }
   },
@@ -39,10 +39,9 @@
       "type": "toolchain",
       "version": ">=1.40803.0,<1.40805.0"
     },
-    "framework-mbed": {
+    "framework-mbed-custom": {
       "type": "framework",
-      "optional": true,
-      "version": "~3.126.0"
+      "version": "~f5cea9c"
     },
     "tool-sreccat": {
       "version": "~1.164.0"
