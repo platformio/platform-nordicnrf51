@@ -23,6 +23,7 @@
         {
           "type": "git",
           "url": "https://github.com/amq/mbed-os.git",
+          "version": "5.2",
           "system": "*"
         }
       ]
@@ -41,7 +42,7 @@
     },
     "framework-mbed-custom": {
       "type": "framework",
-      "version": ">=1.0"
+      "version": ">=5.2"
     },
     "tool-sreccat": {
       "version": "~1.164.0"
