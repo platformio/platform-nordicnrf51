@@ -9,7 +9,7 @@ The Nordic nRF51 Series is a family of highly flexible, multi-protocol, system-o
 
 # Usage
 
-1. [Install PlatformIO Core](http://docs.platformio.org/en/latest/core.html)
+1. [Install PlatformIO Core](http://docs.platformio.org/page/core.html)
 2. Install Nordic nRF51 development platform:
 ```bash
 # install the latest stable version
