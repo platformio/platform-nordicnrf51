@@ -1,17 +1,40 @@
 {
   "build": {
-    "cpu": "cortex-m0", 
-    "f_cpu": "16000000L", 
+    "cpu": "cortex-m0",
+    "f_cpu": "16000000L",
     "mcu": "nrf51822"
-  }, 
+  },
+  "debug": {
+    "tools": {
+      "cmsis-dap": {
+        "server": {
+          "package": "tool-openocd",
+          "executable": "bin/openocd",
+          "arguments": [
+            "-f", "scripts/interface/cmsis-dap.cfg",
+            "-f", "scripts/target/nrf51.cfg"
+          ]
+        },
+        "gdbinit": [
+          "target remote :3333",
+          "file $PROG_PATH",
+          "load $PROG_PATH",
+          "monitor init",
+          "monitor reset halt",
+          "tb main"
+        ],
+        "onboard": true
+      }
+    }
+  },
   "frameworks": [
     "mbed"
-  ], 
-  "name": "Nordic nRF51822-mKIT", 
+  ],
+  "name": "Nordic nRF51822-mKIT",
   "upload": {
-    "maximum_ram_size": 16384, 
+    "maximum_ram_size": 16384,
     "maximum_size": 131072
-  }, 
-  "url": "http://developer.mbed.org/platforms/Nordic-nRF51822/", 
+  },
+  "url": "http://developer.mbed.org/platforms/Nordic-nRF51822/",
   "vendor": "Nordic"
 }
