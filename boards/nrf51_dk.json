@@ -15,14 +15,6 @@
             "-f", "scripts/target/nrf51.cfg"
           ]
         },
-        "gdbinit": [
-          "target remote :3333",
-          "file $PROG_PATH",
-          "load $PROG_PATH",
-          "monitor init",
-          "monitor reset halt",
-          "tb main"
-        ],
         "onboard": true
       }
     }
