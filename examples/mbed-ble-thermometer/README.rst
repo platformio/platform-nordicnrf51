@@ -20,13 +20,19 @@ How to build PlatformIO based project
 .. code-block:: bash
 
     # Change directory to example
-    > cd platform-nordicnrf51/examples/mbed-microbit-hello-world
+    > cd platform-nordicnrf51/examples/mbed-ble-thermometer
 
     # Build project
     > platformio run
 
     # Upload firmware
     > platformio run --target upload
+
+    # Build specific environment
+    > platformio run -e nrf51_dk
+
+    # Upload firmware for the specific environment
+    > platformio run -e nrf51_dk --target upload
 
     # Clean build files
     > platformio run --target clean
