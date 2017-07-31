@@ -4,6 +4,9 @@
     "f_cpu": "16000000L",
     "mcu": "nrf51822"
   },
+  "connectivity": [
+    "bluetooth"
+  ],
   "debug": {
     "tools": {
       "cmsis-dap": {

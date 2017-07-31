@@ -3,7 +3,10 @@
     "cpu": "cortex-m0", 
     "f_cpu": "16000000L", 
     "mcu": "nrf51822"
-  }, 
+  },
+  "connectivity": [
+    "bluetooth"
+  ],
   "frameworks": [
     "mbed"
   ], 
