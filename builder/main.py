@@ -49,10 +49,6 @@ env.Replace(
         "-fno-exceptions"
     ],
 
-    CPPDEFINES=[
-        ("F_CPU", "$BOARD_F_CPU")
-    ],
-
     LINKFLAGS=[
         "-Os",
         "-Wl,--gc-sections,--relax",
@@ -121,17 +117,6 @@ env.Append(
     )
 )
 
-if env.subst("$BOARD") == "rfduino":
-    env.Append(
-        CCFLAGS=["-fno-builtin"],
-        LINKFLAGS=["--specs=nano.specs"]
-    )
-    env.Replace(
-        UPLOADER="rfdloader",
-        UPLOADERFLAGS=["-q", '"$UPLOAD_PORT"'],
-        UPLOADCMD='$UPLOADER $UPLOADERFLAGS $SOURCES'
-    )
-
 #
 # Target: Build executable and linkable firmware
 #
@@ -164,17 +149,15 @@ AlwaysBuild(target_size)
 #
 # Target: Upload by default .bin file
 #
-if env.subst("$BOARD") == "rfduino":
+
+if env.subst("$PIOFRAMEWORK") == "arduino":
     target_upload = env.Alias(
         "upload", target_firm,
-        [env.VerboseAction(env.AutodetectUploadPort,
-                           "Looking for upload port..."),
-         env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")])
+        env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE"))
 else:
     target_upload = env.Alias(
         "upload", target_firm,
-        [env.VerboseAction(env.AutodetectUploadPort,
-                           "Looking for upload disk..."),
+        [env.VerboseAction(env.AutodetectUploadPort, "Looking for upload disk..."),
          env.VerboseAction(env.UploadToDisk, "Uploading $SOURCE")])
 AlwaysBuild(target_upload)
 

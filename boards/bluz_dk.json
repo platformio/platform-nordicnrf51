@@ -2,41 +2,38 @@
   "build": {
     "core": "nRF5",
     "cpu": "cortex-m0",
-    "extra_flags": "-DARDUINO_GENERIC",
+    "extra_flags": "-DARDUINO_BLUZ_DK",
     "f_cpu": "32000000L",
     "mcu": "nrf51822",
     "ldscript": "nrf51_xxac.ld",
-    "variant": "nRF51Dongle"
+    "variant": "BluzDK"
   },
   "connectivity": [
     "bluetooth"
   ],
   "debug": {
     "tools": {
-      "cmsis-dap": {
+      "jlink": {
         "server": {
           "package": "tool-openocd",
           "executable": "bin/openocd",
           "arguments": [
-            "-f", "scripts/interface/cmsis-dap.cfg",
-            "-c", "transport select swd",
+            "-f", "scripts/interface/jlink.cfg",
             "-f", "scripts/target/nrf51.cfg"
           ]
-        },
-        "onboard": true
+        }
       }
     }
   },
   "frameworks": [
-    "arduino",
-    "mbed"
+    "arduino"
   ],
-  "name": "Nordic nRF51-Dongle",
+  "name": "BluzDK",
   "upload": {
     "maximum_ram_size": 32768,
     "maximum_size": 262144,
-    "protocol": "cmsis-dap"
+    "protocol": "jlink"
   },
-  "url": "https://developer.mbed.org/platforms/Nordic-nRF51-Dongle/",
-  "vendor": "Nordic"
+  "url": "https://bluz.io/",
+  "vendor": "BluzDK"
 }

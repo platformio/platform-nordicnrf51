@@ -21,10 +21,6 @@ class Nordicnrf51Platform(PlatformBase):
         return True
 
     def configure_default_packages(self, variables, targets):
-        if (variables.get("board") != "rfduino" and
-                "tool-rfdloader" in self.packages):
-            del self.packages['tool-rfdloader']
-            
         if "mbed" in variables.get("pioframework", []):
                 self.packages["toolchain-gccarmnoneeabi"][
                     'version'] = ">=1.60301.0"
