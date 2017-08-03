@@ -19,11 +19,3 @@ class Nordicnrf51Platform(PlatformBase):
 
     def is_embedded(self):
         return True
-
-    def configure_default_packages(self, variables, targets):
-        if "mbed" in variables.get("pioframework", []):
-                self.packages["toolchain-gccarmnoneeabi"][
-                    'version'] = ">=1.60301.0"
-
-        return PlatformBase.configure_default_packages(
-            self, variables, targets)
