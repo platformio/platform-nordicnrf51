@@ -1,9 +1,16 @@
 {
   "build": {
+    "core": "nRF5",
     "cpu": "cortex-m0",
+    "extra_flags": "-DARDUINO_REDBEARLAB_NRF51822",
     "f_cpu": "16000000L",
-    "mcu": "nrf51822"
+    "mcu": "nrf51822",
+    "ldscript": "nrf51_xxaa.ld",
+    "variant": "RedBearLab_nRF51822"
   },
+  "connectivity": [
+    "bluetooth"
+  ],
   "debug": {
     "tools": {
       "cmsis-dap": {
@@ -12,6 +19,7 @@
           "executable": "bin/openocd",
           "arguments": [
             "-f", "scripts/interface/cmsis-dap.cfg",
+            "-c", "transport select swd",
             "-f", "scripts/target/nrf51.cfg"
           ]
         },
@@ -20,12 +28,14 @@
     }
   },
   "frameworks": [
+    "arduino",
     "mbed"
   ],
   "name": "RedBearLab nRF51822",
   "upload": {
     "maximum_ram_size": 16384,
-    "maximum_size": 262144
+    "maximum_size": 262144,
+    "protocol": "cmsis-dap"
   },
   "url": "https://developer.mbed.org/platforms/RedBearLab-nRF51822/",
   "vendor": "RedBearLab"

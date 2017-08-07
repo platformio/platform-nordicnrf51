@@ -1,9 +1,16 @@
 {
   "build": {
+    "core": "nRF5",
     "cpu": "cortex-m0",
+    "extra_flags": "-DPCA10000",
     "f_cpu": "32000000L",
-    "mcu": "nrf51822"
+    "mcu": "nrf51822",
+    "ldscript": "nrf51_xxaa.ld",
+    "variant": "PCA1000X"
   },
+  "connectivity": [
+    "bluetooth"
+  ],
   "debug": {
     "tools": {
       "cmsis-dap": {
@@ -16,16 +23,30 @@
           ]
         },
         "onboard": true
+      },
+      "jlink": {
+        "server": {
+          "package": "tool-openocd",
+          "executable": "bin/openocd",
+          "arguments": [
+            "-f", "scripts/interface/jlink.cfg",
+            "-c", "transport select swd",
+            "-f", "scripts/target/nrf51.cfg"
+          ]
+        },
+        "onboard": true
       }
     }
   },
   "frameworks": [
+    "arduino",
     "mbed"
   ],
   "name": "Nordic nRF51-DK",
   "upload": {
     "maximum_ram_size": 32768,
-    "maximum_size": 262144
+    "maximum_size": 262144,
+    "protocol": "jlink"
   },
   "url": "https://developer.mbed.org/platforms/Nordic-nRF51-DK/",
   "vendor": "Nordic"
