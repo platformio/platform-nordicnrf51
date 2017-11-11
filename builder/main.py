@@ -149,8 +149,17 @@ AlwaysBuild(target_size)
 #
 # Target: Upload by default .bin file
 #
+if env.subst("$UPLOAD_PROTOCOL") == "nrfjprog":
+    env.Replace(
+        UPLOADER="nrfjprog",
+        UPLOADERFLAGS=[
+            "--chiperase",
+            "-r"
+        ],
+        UPLOADCMD='$UPLOADER $UPLOADERFLAGS --program $SOURCE'
+    )
 
-if env.subst("$PIOFRAMEWORK") == "arduino":
+if "UPLOADCMD" in env:
     target_upload = env.Alias(
         "upload", target_firm,
         env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE"))
