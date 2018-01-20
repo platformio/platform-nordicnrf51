@@ -35,7 +35,7 @@
     "framework-arduinonordicnrf5": {
       "type": "framework",
       "optional": true,
-      "version": "~0.3.0"
+      "version": "~0.4.0"
     },
     "framework-mbed": {
       "type": "framework",
