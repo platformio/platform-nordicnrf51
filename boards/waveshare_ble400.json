@@ -22,6 +22,16 @@
             "-f", "scripts/target/nrf51.cfg"
           ]
         }
+      },
+      "stlink": {
+        "server": {
+          "package": "tool-openocd",
+          "executable": "bin/openocd",
+          "arguments": [
+            "-f", "scripts/interface/stlink-v2.cfg",
+            "-f", "scripts/target/nrf51.cfg"
+          ]
+        }
       }
     }
   },
