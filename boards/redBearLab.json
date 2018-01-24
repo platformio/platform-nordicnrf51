@@ -39,6 +39,7 @@
       "blackmagic",
       "jlink",
       "stlink",
+      "nrfjprog",
       "mbed"
     ],
     "protocol": "cmsis-dap"

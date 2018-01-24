@@ -49,6 +49,7 @@
     "protocols": [
       "cmsis-dap",
       "jlink",
+      "nrfjprog",
       "mbed"
     ],
     "protocol": "jlink"

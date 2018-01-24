@@ -21,6 +21,7 @@
     "protocols": [
       "blackmagic",
       "jlink",
+      "nrfjprog",
       "stlink"
     ],
     "protocol": "jlink"
