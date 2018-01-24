@@ -26,7 +26,9 @@ class Nordicnrf51Platform(PlatformBase):
                                             self.board_config(
                                                 variables.get("board")).get(
                                                     "upload.protocol", ""))
-            if upload_protocol != "nrfjprog":
+
+            if "tool-nrfjprog" in self.packages and \
+                    upload_protocol != "nrfjprog":
                 del self.packages["tool-nrfjprog"]
 
         return PlatformBase.configure_default_packages(self, variables,
