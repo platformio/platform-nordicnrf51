@@ -11,20 +11,6 @@
   "connectivity": [
     "bluetooth"
   ],
-  "debug": {
-    "tools": {
-      "jlink": {
-        "server": {
-          "package": "tool-openocd",
-          "executable": "bin/openocd",
-          "arguments": [
-            "-f", "scripts/interface/jlink.cfg",
-            "-f", "scripts/target/nrf51.cfg"
-          ]
-        }
-      }
-    }
-  },
   "frameworks": [
     "arduino"
   ],
@@ -32,6 +18,11 @@
   "upload": {
     "maximum_ram_size": 32768,
     "maximum_size": 262144,
+    "protocols": [
+      "blackmagic",
+      "jlink",
+      "stlink"
+    ],
     "protocol": "jlink"
   },
   "url": "https://github.com/urish/ng-beacon",

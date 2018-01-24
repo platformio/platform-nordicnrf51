@@ -28,7 +28,12 @@
   "name": "VNG VBLUNO51",
   "upload": {
     "maximum_ram_size": 32768,
-    "maximum_size": 131072
+    "maximum_size": 131072,
+    "protocols": [
+      "cmsis-dap",
+      "mbed"
+    ],
+    "protocol": "cmsis-dap"
   },
   "url": "https://os.mbed.com/platforms/VBLUNO51/",
   "vendor": "VNG"

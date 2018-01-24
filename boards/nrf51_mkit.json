@@ -28,7 +28,12 @@
   "name": "Nordic nRF51822-mKIT",
   "upload": {
     "maximum_ram_size": 16384,
-    "maximum_size": 131072
+    "maximum_size": 131072,
+    "protocols": [
+      "cmsis-dap",
+      "mbed"
+    ],
+    "protocol": "cmsis-dap"
   },
   "url": "http://developer.mbed.org/platforms/Nordic-nRF51822/",
   "vendor": "Nordic"

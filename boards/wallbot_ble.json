@@ -28,7 +28,12 @@
   "name": "JKSoft Wallbot BLE",
   "upload": {
     "maximum_ram_size": 16384,
-    "maximum_size": 131072
+    "maximum_size": 131072,
+    "protocols": [
+      "cmsis-dap",
+      "mbed"
+    ],
+    "protocol": "cmsis-dap"
   },
   "url": "https://developer.mbed.org/platforms/JKSoft-Wallbot-BLE/",
   "vendor": "JKSoft"

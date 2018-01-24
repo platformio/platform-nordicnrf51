@@ -28,7 +28,15 @@
   "name": "y5 nRF51822 mbug",
   "upload": {
     "maximum_ram_size": 16384,
-    "maximum_size": 262144
+    "maximum_size": 262144,
+    "protocols": [
+      "cmsis-dap",
+      "blackmagic",
+      "jlink",
+      "stlink",
+      "mbed"
+    ],
+    "protocol": "cmsis-dap"
   },
   "url": "https://developer.mbed.org/platforms/Y5-NRF51822-MBUG/",
   "vendor": "y5 design"

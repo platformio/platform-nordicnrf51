@@ -29,7 +29,12 @@
   "name": "Delta DFCM-NNN40",
   "upload": {
     "maximum_ram_size": 32768,
-    "maximum_size": 262144
+    "maximum_size": 262144,
+    "protocols": [
+      "cmsis-dap",
+      "mbed"
+    ],
+    "protocol": "cmsis-dap"
   },
   "url": "https://developer.mbed.org/platforms/Delta-DFCM-NNN40/",
   "vendor": "Delta"

@@ -1,39 +1,30 @@
 {
   "build": {
     "core": "nRF5",
-    "cpu": "cortex-m0", 
-    "extra_flags": "-DARDUINO_GENERIC", 
-    "f_cpu": "16000000L",  
+    "cpu": "cortex-m0",
+    "extra_flags": "-DARDUINO_GENERIC",
+    "f_cpu": "16000000L",
     "mcu": "nrf51822",
     "ldscript": "nrf51_xxaa.ld",
     "variant": "Generic"
-  }, 
+  },
   "connectivity": [
     "bluetooth"
   ],
-  "debug": {
-    "tools": {
-      "cmsis-dap": {
-        "server": {
-          "package": "tool-openocd",
-          "executable": "bin/openocd",
-          "arguments": [
-            "-f", "scripts/interface/cmsis-dap.cfg",
-            "-f", "scripts/target/nrf51.cfg"
-          ]
-        }
-      }
-    }
-  },
   "frameworks": [
     "arduino"
-  ], 
-  "name": "RFduino", 
+  ],
+  "name": "RFduino",
   "upload": {
-    "maximum_ram_size": 8192, 
+    "maximum_ram_size": 8192,
     "maximum_size": 131072,
-    "protocol": "cmsis-dap"
-  }, 
-  "url": "http://www.rfduino.com/product/rfd22102-rfduino-dip/index.html", 
+    "protocols": [
+      "blackmagic",
+      "jlink",
+      "stlink"
+    ],
+    "protocol": "jlink"
+  },
+  "url": "http://www.rfduino.com/product/rfd22102-rfduino-dip/index.html",
   "vendor": "RFduino"
 }
