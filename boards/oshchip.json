@@ -1,30 +1,30 @@
 {
   "build": {
-    "core": "nRF5",
-    "cpu": "cortex-m0",
-    "extra_flags": "-DARDUINO_BLUZ_DK -DUSE_LFRC",
-    "f_cpu": "32000000L",
-    "mcu": "nrf51822",
-    "ldscript": "nrf51_xxac.ld",
+    "core": "nRF5", 
+    "cpu": "cortex-m0", 
+    "extra_flags": "-DARDUINO_BLUZ_DK -DUSE_LFRC", 
+    "f_cpu": "32000000L", 
+    "ldscript": "nrf51_xxac.ld", 
+    "mcu": "nrf51822", 
     "variant": "OSHChip"
-  },
+  }, 
   "connectivity": [
     "bluetooth"
-  ],
+  ], 
   "frameworks": [
     "arduino"
-  ],
-  "name": "OSHChip",
+  ], 
+  "name": "OSHChip", 
   "upload": {
-    "maximum_ram_size": 32768,
-    "maximum_size": 262144,
+    "maximum_ram_size": 32768, 
+    "maximum_size": 262144, 
+    "protocol": "jlink", 
     "protocols": [
-      "blackmagic",
-      "jlink",
+      "blackmagic", 
+      "jlink", 
       "stlink"
-    ],
-    "protocol": "jlink"
-  },
-  "url": "http://oshchip.org/",
+    ]
+  }, 
+  "url": "http://oshchip.org/", 
   "vendor": "OSHChip"
 }

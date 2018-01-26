@@ -1,31 +1,31 @@
 {
   "build": {
-    "core": "nRF5",
-    "cpu": "cortex-m0",
-    "extra_flags": "-DARDUINO_NG_BEACON -DUSE_LFRC",
-    "f_cpu": "32000000L",
-    "mcu": "nrf51822",
-    "ldscript": "nrf51_xxaa.ld",
+    "core": "nRF5", 
+    "cpu": "cortex-m0", 
+    "extra_flags": "-DARDUINO_NG_BEACON -DUSE_LFRC", 
+    "f_cpu": "32000000L", 
+    "ldscript": "nrf51_xxaa.ld", 
+    "mcu": "nrf51822", 
     "variant": "ng-beacon"
-  },
+  }, 
   "connectivity": [
     "bluetooth"
-  ],
+  ], 
   "frameworks": [
     "arduino"
-  ],
-  "name": "ng-beacon",
+  ], 
+  "name": "ng-beacon", 
   "upload": {
-    "maximum_ram_size": 32768,
-    "maximum_size": 262144,
+    "maximum_ram_size": 32768, 
+    "maximum_size": 262144, 
+    "protocol": "jlink", 
     "protocols": [
-      "blackmagic",
-      "jlink",
-      "nrfjprog",
+      "blackmagic", 
+      "jlink", 
+      "nrfjprog", 
       "stlink"
-    ],
-    "protocol": "jlink"
-  },
-  "url": "https://github.com/urish/ng-beacon",
+    ]
+  }, 
+  "url": "https://github.com/urish/ng-beacon", 
   "vendor": "ng-beacon"
 }
