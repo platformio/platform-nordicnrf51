@@ -1,51 +1,51 @@
 {
   "build": {
-    "core": "nRF5", 
-    "cpu": "cortex-m0", 
-    "extra_flags": "-DARDUINO_BLE_NANO", 
-    "f_cpu": "16000000L", 
-    "ldscript": "nrf51_xxac.ld", 
-    "mcu": "nrf51822", 
+    "core": "nRF5",
+    "cpu": "cortex-m0",
+    "extra_flags": "-DARDUINO_BLE_NANO",
+    "f_cpu": "16000000L",
+    "ldscript": "nrf51_xxac.ld",
+    "mcu": "nrf51822",
     "variant": "BLENano"
-  }, 
+  },
   "connectivity": [
     "bluetooth"
-  ], 
+  ],
   "debug": {
     "tools": {
       "cmsis-dap": {
-        "onboard": true, 
+        "onboard": true,
         "server": {
           "arguments": [
-            "-f", 
-            "scripts/interface/cmsis-dap.cfg", 
-            "-f", 
+            "-f",
+            "scripts/interface/cmsis-dap.cfg",
+            "-f",
             "scripts/target/nrf51.cfg"
-          ], 
-          "executable": "bin/openocd", 
+          ],
+          "executable": "bin/openocd",
           "package": "tool-openocd"
         }
       }
     }
-  }, 
+  },
   "frameworks": [
-    "arduino", 
+    "arduino",
     "mbed"
-  ], 
-  "name": "RedBearLab BLE Nano 1.5", 
+  ],
+  "name": "RedBearLab BLE Nano 1.5",
   "upload": {
-    "maximum_ram_size": 32768, 
-    "maximum_size": 262144, 
-    "protocol": "cmsis-dap", 
+    "maximum_ram_size": 32768,
+    "maximum_size": 262144,
+    "protocol": "cmsis-dap",
     "protocols": [
-      "cmsis-dap", 
-      "blackmagic", 
-      "jlink", 
-      "stlink", 
-      "nrfjprog", 
+      "cmsis-dap",
+      "blackmagic",
+      "jlink",
+      "stlink",
+      "nrfjprog",
       "mbed"
     ]
-  }, 
-  "url": "https://developer.mbed.org/platforms/RedBearLab-BLE-Nano/", 
+  },
+  "url": "https://developer.mbed.org/platforms/RedBearLab-BLE-Nano/",
   "vendor": "RedBearLab"
 }

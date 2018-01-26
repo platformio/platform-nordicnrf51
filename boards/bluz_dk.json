@@ -1,31 +1,31 @@
 {
   "build": {
-    "core": "nRF5", 
-    "cpu": "cortex-m0", 
-    "extra_flags": "-DARDUINO_BLUZ_DK", 
-    "f_cpu": "32000000L", 
-    "ldscript": "nrf51_xxac.ld", 
-    "mcu": "nrf51822", 
+    "core": "nRF5",
+    "cpu": "cortex-m0",
+    "extra_flags": "-DARDUINO_BLUZ_DK",
+    "f_cpu": "32000000L",
+    "ldscript": "nrf51_xxac.ld",
+    "mcu": "nrf51822",
     "variant": "BluzDK"
-  }, 
+  },
   "connectivity": [
     "bluetooth"
-  ], 
+  ],
   "frameworks": [
     "arduino"
-  ], 
-  "name": "BluzDK", 
+  ],
+  "name": "BluzDK",
   "upload": {
-    "maximum_ram_size": 32768, 
-    "maximum_size": 262144, 
-    "protocol": "jlink", 
+    "maximum_ram_size": 32768,
+    "maximum_size": 262144,
+    "protocol": "jlink",
     "protocols": [
-      "blackmagic", 
-      "jlink", 
-      "nrfjprog", 
+      "blackmagic",
+      "jlink",
+      "nrfjprog",
       "stlink"
     ]
-  }, 
-  "url": "https://bluz.io/", 
+  },
+  "url": "https://bluz.io/",
   "vendor": "BluzDK"
 }

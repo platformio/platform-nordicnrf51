@@ -1,66 +1,66 @@
 {
   "build": {
-    "core": "nRF5", 
-    "cpu": "cortex-m0", 
-    "extra_flags": "-DPCA10000", 
-    "f_cpu": "32000000L", 
-    "ldscript": "nrf51_xxaa.ld", 
-    "mcu": "nrf51822", 
+    "core": "nRF5",
+    "cpu": "cortex-m0",
+    "extra_flags": "-DPCA10000",
+    "f_cpu": "32000000L",
+    "ldscript": "nrf51_xxaa.ld",
+    "mcu": "nrf51822",
     "variant": "PCA1000X"
-  }, 
+  },
   "connectivity": [
     "bluetooth"
-  ], 
+  ],
   "debug": {
     "tools": {
       "cmsis-dap": {
-        "onboard": true, 
+        "onboard": true,
         "server": {
           "arguments": [
-            "-f", 
-            "scripts/interface/cmsis-dap.cfg", 
-            "-f", 
+            "-f",
+            "scripts/interface/cmsis-dap.cfg",
+            "-f",
             "scripts/target/nrf51.cfg"
-          ], 
-          "executable": "bin/openocd", 
+          ],
+          "executable": "bin/openocd",
           "package": "tool-openocd"
         }
-      }, 
+      },
       "jlink": {
-        "onboard": true, 
+        "onboard": true,
         "server": {
           "arguments": [
-            "-f", 
-            "scripts/interface/jlink.cfg", 
-            "-c", 
-            "transport select swd; set WORKAREASIZE 0", 
-            "-f", 
+            "-f",
+            "scripts/interface/jlink.cfg",
+            "-c",
+            "transport select swd; set WORKAREASIZE 0",
+            "-f",
             "scripts/target/nrf51.cfg"
-          ], 
-          "executable": "bin/openocd", 
+          ],
+          "executable": "bin/openocd",
           "package": "tool-openocd"
         }
       }
     }
-  }, 
+  },
   "frameworks": [
-    "arduino", 
+    "arduino",
     "mbed"
-  ], 
-  "name": "Nordic nRF51-DK", 
+  ],
+  "name": "Nordic nRF51-DK",
   "upload": {
-    "maximum_ram_size": 32768, 
-    "maximum_size": 262144, 
-    "protocol": "jlink", 
+    "maximum_ram_size": 32768,
+    "maximum_size": 262144,
+    "protocol": "jlink",
     "protocols": [
-      "cmsis-dap", 
-      "blackmagic", 
-      "jlink", 
-      "nrfjprog", 
-      "stlink", 
+      "cmsis-dap",
+      "blackmagic",
+      "jlink",
+      "nrfjprog",
+      "stlink",
       "mbed"
     ]
-  }, 
-  "url": "https://developer.mbed.org/platforms/Nordic-nRF51-DK/", 
+  },
+  "url": "https://developer.mbed.org/platforms/Nordic-nRF51-DK/",
   "vendor": "Nordic"
 }

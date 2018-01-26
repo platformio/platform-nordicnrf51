@@ -1,42 +1,42 @@
 {
   "build": {
-    "cpu": "cortex-m0", 
-    "f_cpu": "16000000L", 
+    "cpu": "cortex-m0",
+    "f_cpu": "16000000L",
     "mcu": "nrf51822"
-  }, 
+  },
   "connectivity": [
     "bluetooth"
-  ], 
+  ],
   "debug": {
     "tools": {
       "cmsis-dap": {
-        "onboard": true, 
+        "onboard": true,
         "server": {
           "arguments": [
-            "-f", 
-            "scripts/interface/cmsis-dap.cfg", 
-            "-f", 
+            "-f",
+            "scripts/interface/cmsis-dap.cfg",
+            "-f",
             "scripts/target/nrf51.cfg"
-          ], 
-          "executable": "bin/openocd", 
+          ],
+          "executable": "bin/openocd",
           "package": "tool-openocd"
         }
       }
     }
-  }, 
+  },
   "frameworks": [
     "mbed"
-  ], 
-  "name": "BBC micro:bit B(S130)", 
+  ],
+  "name": "BBC micro:bit B(S130)",
   "upload": {
-    "maximum_ram_size": 16384, 
-    "maximum_size": 262144, 
-    "protocol": "cmsis-dap", 
+    "maximum_ram_size": 16384,
+    "maximum_size": 262144,
+    "protocol": "cmsis-dap",
     "protocols": [
-      "cmsis-dap", 
+      "cmsis-dap",
       "mbed"
     ]
-  }, 
-  "url": "https://developer.mbed.org/platforms/Microbit/", 
+  },
+  "url": "https://developer.mbed.org/platforms/Microbit/",
   "vendor": "BBC"
 }

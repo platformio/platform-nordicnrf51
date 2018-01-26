@@ -1,31 +1,31 @@
 {
   "build": {
-    "core": "nRF5", 
-    "cpu": "cortex-m0", 
-    "extra_flags": "-DARDUINO_WAVESHARE_BLE400", 
-    "f_cpu": "32000000L", 
-    "ldscript": "nrf51_xxaa.ld", 
-    "mcu": "nrf51822", 
+    "core": "nRF5",
+    "cpu": "cortex-m0",
+    "extra_flags": "-DARDUINO_WAVESHARE_BLE400",
+    "f_cpu": "32000000L",
+    "ldscript": "nrf51_xxaa.ld",
+    "mcu": "nrf51822",
     "variant": "Waveshare_BLE400"
-  }, 
+  },
   "connectivity": [
     "bluetooth"
-  ], 
+  ],
   "frameworks": [
     "arduino"
-  ], 
-  "name": "Waveshare BLE400", 
+  ],
+  "name": "Waveshare BLE400",
   "upload": {
-    "maximum_ram_size": 32768, 
-    "maximum_size": 262144, 
-    "protocol": "jlink", 
+    "maximum_ram_size": 32768,
+    "maximum_size": 262144,
+    "protocol": "jlink",
     "protocols": [
-      "blackmagic", 
-      "jlink", 
-      "nrfjprog", 
+      "blackmagic",
+      "jlink",
+      "nrfjprog",
       "stlink"
     ]
-  }, 
-  "url": "http://www.waveshare.com/wiki/BLE400", 
+  },
+  "url": "http://www.waveshare.com/wiki/BLE400",
   "vendor": "Waveshare"
 }

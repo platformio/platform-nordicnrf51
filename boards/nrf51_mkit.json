@@ -1,42 +1,42 @@
 {
   "build": {
-    "cpu": "cortex-m0", 
-    "f_cpu": "16000000L", 
+    "cpu": "cortex-m0",
+    "f_cpu": "16000000L",
     "mcu": "nrf51822"
-  }, 
+  },
   "connectivity": [
     "bluetooth"
-  ], 
+  ],
   "debug": {
     "tools": {
       "cmsis-dap": {
-        "onboard": true, 
+        "onboard": true,
         "server": {
           "arguments": [
-            "-f", 
-            "scripts/interface/cmsis-dap.cfg", 
-            "-f", 
+            "-f",
+            "scripts/interface/cmsis-dap.cfg",
+            "-f",
             "scripts/target/nrf51.cfg"
-          ], 
-          "executable": "bin/openocd", 
+          ],
+          "executable": "bin/openocd",
           "package": "tool-openocd"
         }
       }
     }
-  }, 
+  },
   "frameworks": [
     "mbed"
-  ], 
-  "name": "Nordic nRF51822-mKIT", 
+  ],
+  "name": "Nordic nRF51822-mKIT",
   "upload": {
-    "maximum_ram_size": 16384, 
-    "maximum_size": 131072, 
-    "protocol": "cmsis-dap", 
+    "maximum_ram_size": 16384,
+    "maximum_size": 131072,
+    "protocol": "cmsis-dap",
     "protocols": [
-      "cmsis-dap", 
+      "cmsis-dap",
       "mbed"
     ]
-  }, 
-  "url": "http://developer.mbed.org/platforms/Nordic-nRF51822/", 
+  },
+  "url": "http://developer.mbed.org/platforms/Nordic-nRF51822/",
   "vendor": "Nordic"
 }
