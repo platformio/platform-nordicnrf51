@@ -10,15 +10,17 @@
   "debug": {
     "tools": {
       "cmsis-dap": {
+        "onboard": true,
         "server": {
-          "package": "tool-openocd",
-          "executable": "bin/openocd",
           "arguments": [
-            "-f", "scripts/interface/cmsis-dap.cfg",
-            "-f", "scripts/target/nrf51.cfg"
-          ]
-        },
-        "onboard": true
+            "-f",
+            "scripts/interface/cmsis-dap.cfg",
+            "-f",
+            "scripts/target/nrf51.cfg"
+          ],
+          "executable": "bin/openocd",
+          "package": "tool-openocd"
+        }
       }
     }
   },
@@ -28,7 +30,12 @@
   "name": "Nordic nRF51822-mKIT",
   "upload": {
     "maximum_ram_size": 16384,
-    "maximum_size": 131072
+    "maximum_size": 131072,
+    "protocol": "cmsis-dap",
+    "protocols": [
+      "cmsis-dap",
+      "mbed"
+    ]
   },
   "url": "http://developer.mbed.org/platforms/Nordic-nRF51822/",
   "vendor": "Nordic"

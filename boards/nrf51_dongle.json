@@ -4,8 +4,8 @@
     "cpu": "cortex-m0",
     "extra_flags": "-DARDUINO_GENERIC",
     "f_cpu": "32000000L",
-    "mcu": "nrf51822",
     "ldscript": "nrf51_xxac.ld",
+    "mcu": "nrf51822",
     "variant": "nRF51Dongle"
   },
   "connectivity": [
@@ -14,16 +14,32 @@
   "debug": {
     "tools": {
       "cmsis-dap": {
+        "onboard": true,
         "server": {
-          "package": "tool-openocd",
-          "executable": "bin/openocd",
           "arguments": [
-            "-f", "scripts/interface/cmsis-dap.cfg",
-            "-c", "transport select swd",
-            "-f", "scripts/target/nrf51.cfg"
-          ]
-        },
-        "onboard": true
+            "-f",
+            "scripts/interface/cmsis-dap.cfg",
+            "-f",
+            "scripts/target/nrf51.cfg"
+          ],
+          "executable": "bin/openocd",
+          "package": "tool-openocd"
+        }
+      },
+      "jlink": {
+        "onboard": true,
+        "server": {
+          "arguments": [
+            "-f",
+            "scripts/interface/jlink.cfg",
+            "-c",
+            "transport select swd; set WORKAREASIZE 0",
+            "-f",
+            "scripts/target/nrf51.cfg"
+          ],
+          "executable": "bin/openocd",
+          "package": "tool-openocd"
+        }
       }
     }
   },
@@ -35,7 +51,13 @@
   "upload": {
     "maximum_ram_size": 32768,
     "maximum_size": 262144,
-    "protocol": "cmsis-dap"
+    "protocol": "jlink",
+    "protocols": [
+      "cmsis-dap",
+      "jlink",
+      "nrfjprog",
+      "mbed"
+    ]
   },
   "url": "https://developer.mbed.org/platforms/Nordic-nRF51-Dongle/",
   "vendor": "Nordic"
