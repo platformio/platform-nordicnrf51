@@ -27,6 +27,7 @@
         }
       },
       "jlink": {
+        "default": true,
         "onboard": true,
         "server": {
           "arguments": [
