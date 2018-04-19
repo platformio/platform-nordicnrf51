@@ -8,6 +8,7 @@
     "bluetooth"
   ],
   "debug": {
+    "jlink_device": "nRF51802_xxAA",
     "onboard_tools": [
       "cmsis-dap"
     ]

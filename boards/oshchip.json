@@ -11,6 +11,9 @@
   "connectivity": [
     "bluetooth"
   ],
+  "debug": {
+    "jlink_device": "nRF51822_xxAC"
+  },
   "frameworks": [
     "arduino"
   ],
