@@ -15,7 +15,8 @@
     "jlink_device": "nRF51802_xxAA",
     "onboard_tools": [
       "cmsis-dap"
-    ]
+    ],
+    "svd_path": "nrf51.svd"
   },
   "frameworks": [
     "arduino",

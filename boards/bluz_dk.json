@@ -12,7 +12,8 @@
     "bluetooth"
   ],
   "debug": {
-    "jlink_device": "nRF51822_xxAC"
+    "jlink_device": "nRF51822_xxAC",
+    "svd_path": "nrf51.svd"
   },
   "frameworks": [
     "arduino"
