@@ -14,7 +14,8 @@
   "debug": {
     "onboard_tools": [
       "cmsis-dap"
-    ]
+    ],
+    "svd_path": "nrf51.svd"
   },
   "frameworks": [
     "arduino",
