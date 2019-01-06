@@ -16,7 +16,7 @@
       "cmsis-dap"
     ],
     "svd_path": "nrf51.svd",
-    "jlink_device": "nRF51802_xxAA"
+    "jlink_device": "nRF51822_xxAA"
   },
   "frameworks": [
     "arduino",
