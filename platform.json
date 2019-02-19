@@ -20,7 +20,7 @@
   "frameworks": {
     "arduino": {
       "package": "framework-arduinonordicnrf5",
-      "script": "builder/frameworks/arduino/arduino.py"
+      "script": "builder/frameworks/arduino/nrf5.py"
     },
     "mbed": {
       "package": "framework-mbed",
