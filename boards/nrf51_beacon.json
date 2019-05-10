@@ -1,0 +1,43 @@
+{
+  "build": {
+    "core": "nRF5",
+    "cpu": "cortex-m0",
+    "extra_flags": "-DARDUINO_BOARD_PCA20006",
+    "f_cpu": "32000000L",
+    "ldscript": "nrf51_xxaa.ld",
+    "mcu": "nrf51822",
+    "variant": "PCA20006"
+  },
+  "connectivity": [
+    "bluetooth"
+  ],
+  "debug": {
+    "default_tools": [
+      "jlink"
+    ],
+    "jlink_device": "nRF51802_xxAA",
+    "onboard_tools": [
+      "cmsis-dap",
+      "jlink"
+    ],
+    "svd_path": "nrf51.svd"
+  },
+  "frameworks": [
+    "arduino"
+  ],
+  "name": "Nordic Beacon Kit (PCA20006)",
+  "upload": {
+    "maximum_ram_size": 32768,
+    "maximum_size": 262144,
+    "protocol": "jlink",
+    "protocols": [
+      "cmsis-dap",
+      "blackmagic",
+      "jlink",
+      "nrfjprog",
+      "stlink"
+    ]
+  },
+  "url": "https://www.nordicsemi.com/Software-and-Tools/Reference-Designs/nRF51822-Beacon-Kit",
+  "vendor": "Nordic"
+}
