@@ -40,6 +40,9 @@ env.Replace(
     SIZECHECKCMD="$SIZETOOL -A -d $SOURCES",
     SIZEPRINTCMD='$SIZETOOL -B -d $SOURCES',
 
+    ERASEFLAGS=["--eraseall", "-f", "nrf51"],
+    ERASECMD="nrfjprog $ERASEFLAGS",
+
     PROGSUFFIX=".elf"
 )
 
@@ -218,6 +221,13 @@ else:
     sys.stderr.write("Warning! Unknown upload protocol %s\n" % upload_protocol)
 
 AlwaysBuild(env.Alias("upload", target_firm, upload_actions))
+
+#
+# Target: Erase Flash
+#
+
+AlwaysBuild(
+    env.Alias("erase", None, env.VerboseAction("$ERASECMD", "Erasing...")))
 
 #
 # Default targets

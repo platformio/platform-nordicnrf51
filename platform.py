@@ -23,15 +23,8 @@ class Nordicnrf51Platform(PlatformBase):
         return True
 
     def configure_default_packages(self, variables, targets):
-        if variables.get("board"):
-            upload_protocol = variables.get("upload_protocol",
-                                            self.board_config(
-                                                variables.get("board")).get(
-                                                    "upload.protocol", ""))
-
-            if "tool-nrfjprog" in self.packages and \
-                    upload_protocol != "nrfjprog":
-                del self.packages["tool-nrfjprog"]
+        if "erase" in targets:
+            self.packages["tool-nrfjprog"]["optional"] = False
 
         # configure J-LINK tool
         jlink_conds = [
