@@ -2,7 +2,7 @@
   "build": {
     "core": "nRF5",
     "cpu": "cortex-m0",
-    "extra_flags": "-DARDUINO_BLUZ_DK -DUSE_LFRC",
+    "extra_flags": "-DARDUINO_BBC_MICROBIT -DUSE_LFRC",
     "f_cpu": "16000000L",
     "ldscript": "nrf51_xxaa.ld",
     "mcu": "nrf51822",

@@ -26,7 +26,7 @@
     "arduino",
     "mbed"
   ],
-  "name": "Nordic nRF51-Dongle",
+  "name": "Nordic nRF51 Dongle (PCA10031)",
   "upload": {
     "maximum_ram_size": 32768,
     "maximum_size": 262144,
