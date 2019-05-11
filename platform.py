@@ -23,6 +23,10 @@ class Nordicnrf51Platform(PlatformBase):
         return True
 
     def configure_default_packages(self, variables, targets):
+        if "arduino" in variables.get("pioframework", []):
+            self.packages["toolchain-gccarmnoneeabi"][
+                'version'] = "~1.50201.0"
+
         if "erase" in targets:
             self.packages["tool-nrfjprog"]["optional"] = False
 
