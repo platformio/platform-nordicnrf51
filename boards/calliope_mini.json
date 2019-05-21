@@ -1,8 +1,12 @@
 {
   "build": {
+    "core": "nRF5",
     "cpu": "cortex-m0",
+    "extra_flags": "-DARDUINO_CALLIOPE_MINI -DUSE_LFRC",
     "f_cpu": "16000000L",
-    "mcu": "nrf51822"
+    "ldscript": "nrf51_xxaa.ld",
+    "mcu": "nrf51822",
+    "variant": "CalliopeMini"
   },
   "connectivity": [
     "bluetooth"
@@ -11,21 +15,23 @@
     "onboard_tools": [
       "cmsis-dap"
     ],
-    "svd_path": "nrf51.svd"
+    "svd_path": "nrf51.svd",
+    "jlink_device": "nRF51822_xxAA"
   },
   "frameworks": [
-    "mbed"
+    "arduino"
   ],
-  "name": "BBC micro:bit B(S130)",
+  "name": "Calliope mini",
   "upload": {
     "maximum_ram_size": 16384,
     "maximum_size": 262144,
     "protocol": "cmsis-dap",
     "protocols": [
       "cmsis-dap",
-      "mbed"
+      "mbed",
+      "jlink"
     ]
   },
-  "url": "https://developer.mbed.org/platforms/Microbit/",
-  "vendor": "BBC"
+  "url": "https://calliope.cc",
+  "vendor": "Calliope"
 }

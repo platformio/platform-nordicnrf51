@@ -26,7 +26,7 @@
     "arduino",
     "mbed"
   ],
-  "name": "Nordic nRF51-DK",
+  "name": "Nordic nRF51X22 Development Kit(PCA1000X)",
   "upload": {
     "maximum_ram_size": 32768,
     "maximum_size": 262144,
@@ -40,6 +40,6 @@
       "mbed"
     ]
   },
-  "url": "https://developer.mbed.org/platforms/Nordic-nRF51-DK/",
+  "url": "https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF51-DK",
   "vendor": "Nordic"
 }
