@@ -94,13 +94,16 @@ class Nordicnrf51Platform(PlatformBase):
                 }
 
             else:
-                server_args = ["-f", "scripts/interface/%s.cfg" % link]
+                server_args = [
+                    "-s", "$PACKAGE_DIR/scripts",
+                    "-f", "interface/%s.cfg" % link
+                ]
                 if link == "stlink":
                     server_args.extend([
                         "-c",
                         "transport select hla_swd; set WORKAREASIZE 0x4000"
                     ])
-                server_args.extend(["-f", "scripts/target/nrf51.cfg"])
+                server_args.extend(["-f", "target/nrf51.cfg"])
                 debug['tools'][link] = {
                     "server": {
                         "package": "tool-openocd",
