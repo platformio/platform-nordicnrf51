@@ -6,7 +6,10 @@
     "f_cpu": "16000000L",
     "ldscript": "nrf51_xxaa.ld",
     "mcu": "nrf51822",
-    "variant": "BBCmicrobit"
+    "variant": "BBCmicrobit",
+    "zephyr": {
+       "variant": "bbc_microbit"
+    }
   },
   "connectivity": [
     "bluetooth"
@@ -20,7 +23,8 @@
   },
   "frameworks": [
     "arduino",
-    "mbed"
+    "mbed",
+    "zephyr"
   ],
   "name": "BBC micro:bit",
   "upload": {

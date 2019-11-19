@@ -6,7 +6,10 @@
     "f_cpu": "32000000L",
     "ldscript": "nrf51_xxaa.ld",
     "mcu": "nrf51822",
-    "variant": "Waveshare_BLE400"
+    "variant": "Waveshare_BLE400",
+    "zephyr": {
+       "variant": "nrf51_ble400"
+    }
   },
   "connectivity": [
     "bluetooth"
@@ -16,7 +19,8 @@
     "svd_path": "nrf51.svd"
   },
   "frameworks": [
-    "arduino"
+    "arduino",
+    "zephyr"
   ],
   "name": "Waveshare BLE400",
   "upload": {
