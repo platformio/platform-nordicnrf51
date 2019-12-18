@@ -27,8 +27,10 @@ class Nordicnrf51Platform(PlatformBase):
         if "erase" in targets:
             self.packages["tool-nrfjprog"]["optional"] = False
         if "zephyr" in variables.get("pioframework", []):
-            for p in ("framework-zephyr-hal-nordic", "tool-cmake", "tool-dtc", "tool-ninja"):
-                self.packages[p]["optional"] = False
+            for p in self.packages:
+                if p.startswith("framework-zephyr-") or p in (
+                    "tool-cmake", "tool-dtc", "tool-ninja"):
+                    self.packages[p]["optional"] = False
             self.packages['toolchain-gccarmnoneeabi']['version'] = "~1.80201.0"
             if "windows" not in get_systype():
                 self.packages['tool-gperf']['optional'] = False
@@ -101,16 +103,13 @@ class Nordicnrf51Platform(PlatformBase):
                 }
 
             else:
-                server_args = [
-                    "-s", "$PACKAGE_DIR/scripts",
-                    "-f", "interface/%s.cfg" % link
-                ]
+                server_args = ["-f", "scripts/interface/%s.cfg" % link]
                 if link == "stlink":
                     server_args.extend([
                         "-c",
                         "transport select hla_swd; set WORKAREASIZE 0x4000"
                     ])
-                server_args.extend(["-f", "target/nrf51.cfg"])
+                server_args.extend(["-f", "scripts/target/nrf51.cfg"])
                 debug['tools'][link] = {
                     "server": {
                         "package": "tool-openocd",
