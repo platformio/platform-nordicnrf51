@@ -2,7 +2,10 @@
   "build": {
     "cpu": "cortex-m0",
     "f_cpu": "16000000L",
-    "mcu": "nrf51822"
+    "mcu": "nrf51822",
+    "zephyr": {
+       "variant": "nrf51_vbluno51"
+    }
   },
   "connectivity": [
     "bluetooth"
@@ -14,7 +17,8 @@
     "svd_path": "nrf51.svd"
   },
   "frameworks": [
-    "mbed"
+    "mbed",
+    "zephyr"
   ],
   "name": "VNG VBLUNO51",
   "upload": {

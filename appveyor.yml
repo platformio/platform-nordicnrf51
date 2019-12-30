@@ -8,10 +8,13 @@ environment:
     - PLATFORMIO_PROJECT_DIR: "examples/mbed-ble-thermometer"
     - PLATFORMIO_PROJECT_DIR: "examples/mbed-blink"
     - PLATFORMIO_PROJECT_DIR: "examples/mbed-serial"
+    - PLATFORMIO_PROJECT_DIR: "examples/zephyr-ble-eddystone"
+    - PLATFORMIO_PROJECT_DIR: "examples/zephyr-blink"
+    - PLATFORMIO_PROJECT_DIR: "examples/zephyr-drivers-entropy"
 
 install:
   - cmd: git submodule update --init --recursive
-  - cmd: SET PATH=%PATH%;C:\Python36\Scripts
+  - cmd: SET PATH=C:\Python36\Scripts;%PATH%
   - cmd: pip3 install -U https://github.com/platformio/platformio/archive/develop.zip
   - cmd: platformio platform install file://.
 

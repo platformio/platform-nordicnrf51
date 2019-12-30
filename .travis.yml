@@ -10,6 +10,19 @@ env:
   - PLATFORMIO_PROJECT_DIR=examples/mbed-ble-thermometer
   - PLATFORMIO_PROJECT_DIR=examples/mbed-blink
   - PLATFORMIO_PROJECT_DIR=examples/mbed-serial
+  - PLATFORMIO_PROJECT_DIR=examples/zephyr-ble-eddystone
+  - PLATFORMIO_PROJECT_DIR=examples/zephyr-blink
+  - PLATFORMIO_PROJECT_DIR=examples/zephyr-drivers-entropy
+
+# Zephyr framework doesn't support python 2
+jobs:
+  exclude:
+    - python: "2.7"
+      env: PLATFORMIO_PROJECT_DIR=examples/zephyr-ble-eddystone
+    - python: "2.7"
+      env: PLATFORMIO_PROJECT_DIR=examples/zephyr-blink
+    - python: "2.7"
+      env: PLATFORMIO_PROJECT_DIR=examples/zephyr-drivers-entropy
 
 install:
   - pip install -U https://github.com/platformio/platformio/archive/develop.zip
