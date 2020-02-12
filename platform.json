@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/platformio/platform-nordicnrf51.git"
   },
-  "version": "5.0.1",
+  "version": "5.0.2",
   "packageRepositories": [
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "http://dl.platformio.org/packages/manifest.json"
@@ -49,7 +49,7 @@
     "framework-zephyr": {
       "type": "framework",
       "optional": true,
-      "version": "~1.20100.0"
+      "version": "~2.20100.0"
     },
     "framework-zephyr-hal-nordic": {
       "optional": true,
