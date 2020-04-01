@@ -2,12 +2,6 @@ build: off
 environment:
 
   matrix:
-    - PLATFORMIO_PROJECT_DIR: "examples/arduino-blink"
-    - PLATFORMIO_PROJECT_DIR: "examples/arduino-ble-led"
-    - PLATFORMIO_PROJECT_DIR: "examples/arduino-internal-libs"
-    - PLATFORMIO_PROJECT_DIR: "examples/mbed-ble-thermometer"
-    - PLATFORMIO_PROJECT_DIR: "examples/mbed-blink"
-    - PLATFORMIO_PROJECT_DIR: "examples/mbed-serial"
     - PLATFORMIO_PROJECT_DIR: "examples/zephyr-ble-eddystone"
     - PLATFORMIO_PROJECT_DIR: "examples/zephyr-blink"
     - PLATFORMIO_PROJECT_DIR: "examples/zephyr-drivers-entropy"
