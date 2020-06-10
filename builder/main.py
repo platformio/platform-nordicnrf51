@@ -21,6 +21,7 @@ from SCons.Script import (ARGUMENTS, COMMAND_LINE_TARGETS, AlwaysBuild,
                           Builder, Default, DefaultEnvironment)
 
 env = DefaultEnvironment()
+env.SConscript("compat.py", exports="env")
 platform = env.PioPlatform()
 board = env.BoardConfig()
 
@@ -128,10 +129,13 @@ target_buildprog = env.Alias("buildprog", target_firm, target_firm)
 # Target: Print binary size
 #
 
-target_size = env.Alias(
-    "size", target_elf,
-    env.VerboseAction("$SIZEPRINTCMD", "Calculating size $SOURCE"))
-AlwaysBuild(target_size)
+target_size = env.AddPlatformTarget(
+    "size",
+    target_elf,
+    env.VerboseAction("$SIZEPRINTCMD", "Calculating size $SOURCE"),
+    "Program Size",
+    "Calculate program size",
+)
 
 #
 # Target: Upload by default .bin file
@@ -238,14 +242,14 @@ elif upload_protocol == "custom":
 else:
     sys.stderr.write("Warning! Unknown upload protocol %s\n" % upload_protocol)
 
-AlwaysBuild(env.Alias("upload", target_firm, upload_actions))
+env.AddPlatformTarget("upload", target_firm, upload_actions, "Upload")
 
 #
 # Target: Erase Flash
 #
 
-AlwaysBuild(
-    env.Alias("erase", None, env.VerboseAction("$ERASECMD", "Erasing...")))
+env.AddPlatformTarget(
+    "erase", None, env.VerboseAction("$ERASECMD", "Erasing..."), "Erase Flash")
 
 #
 # Information about obsolete method of specifying linker scripts
