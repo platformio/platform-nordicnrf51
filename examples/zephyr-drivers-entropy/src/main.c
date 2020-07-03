@@ -14,14 +14,14 @@ void main(void)
 
 	printf("Entropy Example! %s\n", CONFIG_ARCH);
 
-	dev = device_get_binding(CONFIG_ENTROPY_NAME);
+	dev = device_get_binding(DT_CHOSEN_ZEPHYR_ENTROPY_LABEL);
 	if (!dev) {
 		printf("error: no entropy device\n");
 		return;
 	}
 
 	printf("entropy device is %p, name is %s\n",
-	       dev, dev->config->name);
+	       dev, dev->name);
 
 	while (1) {
 #define BUFFER_LENGTH 10
@@ -50,6 +50,6 @@ void main(void)
 
 		printf("\n");
 
-		k_sleep(1000);
+		k_sleep(K_MSEC(1000));
 	}
 }
