@@ -43,7 +43,7 @@
       "type": "framework",
       "optional": true,
       "owner": "platformio",
-      "version": "~1.600.0"
+      "version": "~1.700.0"
     },
     "framework-mbed": {
       "type": "framework",
