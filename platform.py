@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from platform import system
+import copy
+import platform
 
 from platformio.managers.platform import PlatformBase
 from platformio.util import get_systype
@@ -31,9 +32,9 @@ class Nordicnrf51Platform(PlatformBase):
                 if p.startswith("framework-zephyr-") or p in (
                     "tool-cmake", "tool-dtc", "tool-ninja"):
                     self.packages[p]["optional"] = False
-            self.packages['toolchain-gccarmnoneeabi']['version'] = "~1.80201.0"
+            self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.80201.0"
             if "windows" not in get_systype():
-                self.packages['tool-gperf']['optional'] = False
+                self.packages["tool-gperf"]["optional"] = False
 
         # configure J-LINK tool
         jlink_conds = [
@@ -69,15 +70,15 @@ class Nordicnrf51Platform(PlatformBase):
         upload_protocols = board.manifest.get("upload", {}).get(
             "protocols", [])
         if "tools" not in debug:
-            debug['tools'] = {}
+            debug["tools"] = {}
 
         # J-Link / ST-Link / BlackMagic Probe / CMSIS-DAP
         for link in ("blackmagic", "jlink", "stlink", "cmsis-dap"):
-            if link not in upload_protocols or link in debug['tools']:
+            if link not in upload_protocols or link in debug["tools"]:
                 continue
 
             if link == "blackmagic":
-                debug['tools']['blackmagic'] = {
+                debug["tools"]["blackmagic"] = {
                     "hwids": [["0x1d50", "0x6018"]],
                     "require_debug_port": True
                 }
@@ -85,7 +86,7 @@ class Nordicnrf51Platform(PlatformBase):
             elif link == "jlink":
                 assert debug.get("jlink_device"), (
                     "Missed J-Link Device ID for %s" % board.id)
-                debug['tools'][link] = {
+                debug["tools"][link] = {
                     "server": {
                         "package": "tool-jlink",
                         "arguments": [
@@ -96,7 +97,7 @@ class Nordicnrf51Platform(PlatformBase):
                             "-port", "2331"
                         ],
                         "executable": ("JLinkGDBServerCL.exe"
-                                       if system() == "Windows" else
+                                       if platform.system() == "Windows" else
                                        "JLinkGDBServer")
                     }
                 }
@@ -112,7 +113,7 @@ class Nordicnrf51Platform(PlatformBase):
                         "transport select hla_swd; set WORKAREASIZE 0x4000"
                     ])
                 server_args.extend(["-f", "target/nrf51.cfg"])
-                debug['tools'][link] = {
+                debug["tools"][link] = {
                     "server": {
                         "package": "tool-openocd",
                         "executable": "bin/openocd",
@@ -120,8 +121,24 @@ class Nordicnrf51Platform(PlatformBase):
                     }
                 }
 
-            debug['tools'][link]['onboard'] = link in debug.get("onboard_tools", [])
-            debug['tools'][link]['default'] = link in debug.get("default_tools", [])
+            debug["tools"][link]["onboard"] = link in debug.get("onboard_tools", [])
+            debug["tools"][link]["default"] = link in debug.get("default_tools", [])
 
         board.manifest['debug'] = debug
         return board
+
+    def configure_debug_options(self, initial_debug_options, ide_data):
+        debug_options = copy.deepcopy(initial_debug_options)
+        server_executable = debug_options["server"]["executable"].lower()
+        adapter_speed = initial_debug_options.get("speed")
+        if adapter_speed:
+            if "openocd" in server_executable:
+                debug_options["server"]["arguments"].extend(
+                    ["-c", "adapter speed %s" % adapter_speed]
+                )
+            elif "jlink" in server_executable:
+                debug_options["server"]["arguments"].extend(
+                    ["-speed", adapter_speed]
+                )
+
+        return debug_options
