@@ -10,7 +10,7 @@
     "mcu": "nrf51822",
     "variant": "nRF51Dongle",
     "zephyr": {
-       "variant": "nrf51_pca10031"
+       "variant": "nrf51dongle_nrf51422"
     }
   },
   "connectivity": [

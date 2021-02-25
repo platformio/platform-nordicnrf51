@@ -10,7 +10,7 @@
     "mcu": "nrf51822",
     "variant": "PCA1000X",
     "zephyr": {
-       "variant": "nrf51_pca10028"
+       "variant": "nrf51dk_nrf51422"
     }
   },
   "connectivity": [
