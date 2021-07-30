@@ -29,8 +29,7 @@ class Nordicnrf51Platform(PlatformBase):
             self.packages["tool-nrfjprog"]["optional"] = False
         if "zephyr" in variables.get("pioframework", []):
             for p in self.packages:
-                if p.startswith("framework-zephyr-") or p in (
-                    "tool-cmake", "tool-dtc", "tool-ninja"):
+                if p in ("tool-cmake", "tool-dtc", "tool-ninja"):
                     self.packages[p]["optional"] = False
             self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.80201.0"
             if "windows" not in get_systype():
@@ -129,9 +128,10 @@ class Nordicnrf51Platform(PlatformBase):
 
     def configure_debug_options(self, initial_debug_options, ide_data):
         debug_options = copy.deepcopy(initial_debug_options)
-        server_executable = debug_options["server"]["executable"].lower()
         adapter_speed = initial_debug_options.get("speed")
         if adapter_speed:
+            server_options = debug_options.get("server") or {}
+            server_executable = server_options.get("executable", "").lower()
             if "openocd" in server_executable:
                 debug_options["server"]["arguments"].extend(
                     ["-c", "adapter speed %s" % adapter_speed]
