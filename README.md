@@ -1,4 +1,4 @@
-# Nordic nRF51: development platform for [PlatformIO](http://platformio.org)
+# Nordic nRF51: development platform for [PlatformIO](https://platformio.org)
 
 [![Build Status](https://github.com/platformio/platform-nordicnrf51/workflows/Examples/badge.svg)](https://github.com/platformio/platform-nordicnrf51/actions)
 
@@ -9,7 +9,7 @@ The Nordic nRF51 Series is a family of highly flexible, multi-protocol, system-o
 
 # Usage
 
-1. [Install PlatformIO](http://platformio.org)
+1. [Install PlatformIO](https://platformio.org)
 2. Create PlatformIO project and configure a platform option in [platformio.ini](https://docs.platformio.org/page/projectconf.html) file:
 
 ## Stable version
