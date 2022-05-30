@@ -17,7 +17,6 @@
     "svd_path": "nrf51.svd"
   },
   "frameworks": [
-    "mbed",
     "zephyr"
   ],
   "name": "VNG VBLUNO51",
@@ -26,10 +25,9 @@
     "maximum_size": 131072,
     "protocol": "cmsis-dap",
     "protocols": [
-      "cmsis-dap",
-      "mbed"
+      "cmsis-dap"
     ]
   },
-  "url": "https://os.mbed.com/platforms/VBLUNO51/",
+  "url": "https://vngiotlab.github.io/vbluno/mydoc_introduction.html",
   "vendor": "VNG"
 }

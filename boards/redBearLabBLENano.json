@@ -25,7 +25,6 @@
   },
   "frameworks": [
     "arduino",
-    "mbed",
     "zephyr"
   ],
   "name": "RedBearLab BLE Nano 1.5",
@@ -38,10 +37,9 @@
       "blackmagic",
       "jlink",
       "stlink",
-      "nrfjprog",
-      "mbed"
+      "nrfjprog"
     ]
   },
-  "url": "https://developer.mbed.org/platforms/RedBearLab-BLE-Nano/",
+  "url": "https://www.sparkfun.com/products/retired/13730",
   "vendor": "RedBearLab"
 }
