@@ -29,7 +29,6 @@
   },
   "frameworks": [
     "arduino",
-    "mbed",
     "zephyr"
   ],
   "name": "Nordic nRF51 Dongle (PCA10031)",
@@ -40,10 +39,9 @@
     "protocols": [
       "cmsis-dap",
       "jlink",
-      "nrfjprog",
-      "mbed"
+      "nrfjprog"
     ]
   },
-  "url": "https://developer.mbed.org/platforms/Nordic-nRF51-Dongle/",
+  "url": "https://www.nordicsemi.com/Products/Development-hardware/nRF51-Dongle",
   "vendor": "Nordic"
 }

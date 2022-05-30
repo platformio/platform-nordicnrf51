@@ -21,7 +21,6 @@ from SCons.Script import (ARGUMENTS, COMMAND_LINE_TARGETS, AlwaysBuild,
                           Builder, Default, DefaultEnvironment)
 
 env = DefaultEnvironment()
-env.SConscript("compat.py", exports="env")
 platform = env.PioPlatform()
 board = env.BoardConfig()
 
@@ -146,13 +145,7 @@ upload_protocol = env.subst("$UPLOAD_PROTOCOL")
 debug_tools = board.get("debug.tools", {})
 upload_actions = []
 
-if upload_protocol == "mbed":
-    upload_actions = [
-        env.VerboseAction(env.AutodetectUploadPort, "Looking for upload disk..."),
-        env.VerboseAction(env.UploadToDisk, "Uploading $SOURCE")
-    ]
-
-elif upload_protocol.startswith("blackmagic"):
+if upload_protocol.startswith("blackmagic"):
     env.Replace(
         UPLOADER="$GDB",
         UPLOADERFLAGS=[

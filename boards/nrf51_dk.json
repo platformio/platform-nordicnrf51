@@ -29,7 +29,6 @@
   },
   "frameworks": [
     "arduino",
-    "mbed",
     "zephyr"
   ],
   "name": "Nordic nRF51X22 Development Kit(PCA1000X)",
@@ -42,8 +41,7 @@
       "blackmagic",
       "jlink",
       "nrfjprog",
-      "stlink",
-      "mbed"
+      "stlink"
     ]
   },
   "url": "https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF51-DK",

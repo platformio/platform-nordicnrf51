@@ -21,8 +21,7 @@
     "svd_path": "nrf51.svd"
   },
   "frameworks": [
-    "arduino",
-    "mbed"
+    "arduino"
   ],
   "name": "RedBearLab nRF51822",
   "upload": {
@@ -34,10 +33,9 @@
       "blackmagic",
       "jlink",
       "stlink",
-      "nrfjprog",
-      "mbed"
+      "nrfjprog"
     ]
   },
-  "url": "https://developer.mbed.org/platforms/RedBearLab-nRF51822/",
+  "url": "https://www.seeedstudio.com/RedBearLab-nRF51822-p-2126.html",
   "vendor": "RedBearLab"
 }

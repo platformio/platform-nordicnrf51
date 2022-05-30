@@ -12,21 +12,17 @@
     "nRF51"
   ],
   "engines": {
-    "platformio": "^5"
+    "platformio": "^6"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/platformio/platform-nordicnrf51.git"
   },
-  "version": "8.1.0",
+  "version": "9.0.0",
   "frameworks": {
     "arduino": {
       "package": "framework-arduinonordicnrf5",
       "script": "builder/frameworks/arduino/nrf5.py"
-    },
-    "mbed": {
-      "package": "framework-mbed",
-      "script": "builder/frameworks/mbed.py"
     },
     "zephyr": {
       "package": "framework-zephyr",
@@ -47,12 +43,6 @@
       "optional": true,
       "owner": "platformio",
       "version": "~1.700.0"
-    },
-    "framework-mbed": {
-      "type": "framework",
-      "optional": true,
-      "owner": "platformio",
-      "version": "~5.51105.190304"
     },
     "framework-zephyr": {
       "type": "framework",

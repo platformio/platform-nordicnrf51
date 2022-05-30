@@ -30,7 +30,6 @@
     "protocol": "cmsis-dap",
     "protocols": [
       "cmsis-dap",
-      "mbed",
       "jlink"
     ]
   },

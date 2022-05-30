@@ -25,7 +25,6 @@
   },
   "frameworks": [
     "arduino",
-    "mbed",
     "zephyr"
   ],
   "name": "BBC micro:bit",
@@ -35,10 +34,9 @@
     "protocol": "cmsis-dap",
     "protocols": [
       "cmsis-dap",
-      "mbed",
       "jlink"
     ]
   },
-  "url": "https://developer.mbed.org/platforms/Microbit/",
+  "url": "https://microbit.org/",
   "vendor": "BBC"
 }
