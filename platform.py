@@ -32,7 +32,7 @@ class Nordicnrf51Platform(PlatformBase):
             for p in self.packages:
                 if p in ("tool-cmake", "tool-dtc", "tool-ninja"):
                     self.packages[p]["optional"] = False
-            self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.80201.0"
+            self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.120301.0"
             if not IS_WINDOWS:
                 self.packages["tool-gperf"]["optional"] = False
 
@@ -103,13 +103,13 @@ class Nordicnrf51Platform(PlatformBase):
 
             else:
                 server_args = [
-                    "-s", "$PACKAGE_DIR/scripts",
+                    "-s", "$PACKAGE_DIR/openocd/scripts",
                     "-f", "interface/%s.cfg" % link
                 ]
                 if link == "stlink":
                     server_args.extend([
                         "-c",
-                        "transport select hla_swd; set WORKAREASIZE 0x4000"
+                        "transport select swd; set WORKAREASIZE 0x4000"
                     ])
                 server_args.extend(["-f", "target/nrf51.cfg"])
                 debug["tools"][link] = {

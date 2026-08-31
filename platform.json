@@ -18,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/platformio/platform-nordicnrf51.git"
   },
-  "version": "9.0.0",
+  "version": "10.0.0",
   "frameworks": {
     "arduino": {
       "package": "framework-arduinonordicnrf5",
@@ -35,7 +35,7 @@
       "owner": "platformio",
       "version": ">=1.60301.0,<1.80000.0",
       "optionalVersions": [
-        "~1.80201.0"
+        "~1.120301.0"
       ]
     },
     "framework-arduinonordicnrf5": {
@@ -48,7 +48,7 @@
       "type": "framework",
       "optional": true,
       "owner": "platformio",
-      "version": "~2.20701.0"
+      "version": "~3.40402.0"
     },
     "tool-sreccat": {
       "owner": "platformio",
@@ -58,7 +58,7 @@
       "type": "uploader",
       "optional": true,
       "owner": "platformio",
-      "version": "~2.1100.0"
+      "version": "~3.1200.7"
     },
     "tool-nrfjprog": {
       "type": "uploader",

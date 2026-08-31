@@ -14,7 +14,6 @@ jobs:
           - "examples/arduino-internal-libs"
           - "examples/zephyr-ble-eddystone"
           - "examples/zephyr-blink"
-          - "examples/zephyr-drivers-entropy"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -23,7 +22,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: "3.9"
+          python-version: "3.10"
       - name: Install dependencies
         run: |
           pip install -U https://github.com/platformio/platformio/archive/develop.zip
