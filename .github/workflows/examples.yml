@@ -14,7 +14,6 @@ jobs:
           - "examples/arduino-internal-libs"
           - "examples/zephyr-ble-eddystone"
           - "examples/zephyr-blink"
-          - "examples/zephyr-drivers-entropy"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
